@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise3</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <!-- Task Input Form -->
+    <form id="taskForm">
+        <!-- Task Input -->
+        <label for="task">Task:</label>
+        <input type="text" id="task" name="task" placeholder="Enter task" required>
+        <br><br>
+
+        <!-- Tag Selection -->
+        <label for="tag">Tag:</label>
+        <select id="tag" name="tag" required>
+            <option value="important">Important</option>
+            <option value="unimportant">Unimportant</option>
+        </select>
+        <br><br>
+
+        <!-- Add Task Button -->
+        <button type="submit">Add Task</button>
+    </form>
+
+    <!-- Task Filter Buttons -->
+    <button id="importantBtn">Show only the important tasks</button>
+    <button id="unimportantBtn">Show the tasks that are not important</button>
+    <button id="allBtn">Show all the tasks</button>
+
+    <ul id="taskList"></ul>
+
+    <script>
+        const taskForm = document.getElementById('taskForm');
+        const taskList = document.getElementById('taskList');
+        let tasks = [];
+
+        // Function to display tasks
+        function displayTasks(tasks) {
+            taskList.innerHTML = ""; 
+
+            tasks.forEach(task => {
+                const li = document.createElement('li');
+                li.textContent = task.description;
+                li.className = task.priority === 1 ? 'priority-1' : 'priority-0';
+                taskList.appendChild(li);
+            });
+        }
+
+        // Event listener for form submission to add new tasks
+        taskForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const taskDescription = document.getElementById('task').value;
+            const taskTag = document.getElementById('tag').value;
+
+            const taskPriority = taskTag === 'important' ? 1 : 0;
+
+            const newTask = {
+                description: taskDescription,
+                priority: taskPriority
+            };
+
+            tasks.push(newTask); 
+            taskForm.reset(); 
+
+            displayTasks(tasks);
+        });
+
+        // Event listener for "Show Important Tasks" button
+        document.getElementById('importantBtn').addEventListener('click', () => {
+            const importantTasks = tasks.filter(task => task.priority === 1);
+            displayTasks(importantTasks);
+        });
+
+        // Event listener for "Show Unimportant Tasks" button
+        document.getElementById('unimportantBtn').addEventListener('click', () => {
+            const unimportantTasks = tasks.filter(task => task.priority === 0);
+            displayTasks(unimportantTasks);
+        });
+
+        // Event listener for "Show All Tasks" button
+        document.getElementById('allBtn').addEventListener('click', () => {
+            displayTasks(tasks);
+        });
+
+        displayTasks(tasks);
+    </script>
+
+</body>
+</html>

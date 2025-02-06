@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise2</title>
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <form id="taskForm">
+        <!-- Task Input -->
+        <label for="task">Task:</label>
+        <input type="text" id="task" name="task" placeholder="Enter task" required>
+        <br><br>
+
+        <!-- Tag Selection -->
+        <label for="tag">Tag:</label>
+        <select id="tag" name="tag" required>
+            <option value="important">Important</option>
+            <option value="unimportant">Unimportant</option>
+        </select>
+        <br><br>
+
+        <!-- Add Task Button -->
+        <button type="submit">Add Task</button>
+    </form>
+
+    <ul id="taskList"></ul>
+    <script>
+        const taskForm = document.getElementById('taskForm');
+        const taskList = document.getElementById('taskList');
+
+        taskForm.addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const taskDescription = document.getElementById('task').value;
+            const taskTag = document.getElementById('tag').value;
+
+            const taskPriority = taskTag === 'important' ? 1 : 0;
+
+            const newTask = {
+                description: taskDescription,
+                priority: taskPriority
+            };
+
+            const li = document.createElement('li');
+            li.textContent = newTask.description;
+            li.className = newTask.priority === 1 ? 'priority-1' : 'priority-0';
+
+            taskList.appendChild(li);
+
+            taskForm.reset();
+        });
+    </script>
+</body>
+</html>
