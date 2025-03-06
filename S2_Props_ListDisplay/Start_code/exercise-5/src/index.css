@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    background: #F0F8FF;
+    min-height: 100vh;
+}
+header{
+    text-align: center;
+}
+img{
+    width: 50%;
+    height: 50%;
+    margin-top: 10px;
+}
+ul{
+    display: flex;
+    background-color: #E5E4E2;
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+}
+li{
+    background-color: white;
+    margin: 10px;
+}
+li:hover{
+    background-color: #BEBFC5;
+}
