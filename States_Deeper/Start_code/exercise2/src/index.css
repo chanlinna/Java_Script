@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+:root {
+  --main-color: #9cc54b;
+  --main-color-light: #a9d453;
+  --grey-color: #bfbfbf;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*  ----------  HEADER  --------------------- */
+
+header {
+  margin: 0 50px 0px;
+  text-align: center;
+}
+
+header h1 {
+  padding: 30px 20px 20px;
+  font-size: 3em;
+  color: var(--main-color);
+}
+
+/*  ----------  STUFF FORM  --------------------- */
+.stuff-form {
+  width: 50%;
+
+  margin: auto;
+  margin-top: 2em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 30px;
+
+  border: 1px solid var(--grey-color);
+  border-radius: 20px;
+}
+
+input {
+  width: 100%;
+
+  padding: 20px;
+
+  font-family: inherit;
+
+  border: 1px solid var(--grey-color);
+  border-radius: 15px;
+}
+
+button {
+  width: 100%;
+
+  margin-top: 30px;
+  padding: 20px;
+
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  background: var(--main-color);
+}
+
+button:hover {
+  background: var(--main-color-light);
+}
+
+/*  ----------  STUFF LIST  --------------------- */
+
+.stuff-list {
+  width: 50%;
+
+  margin: auto;
+  margin-top: 2em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.stuff {
+  width: 100%;
+
+  padding-left: 20px;
+  padding-top: 10px;
+
+  border-top: 1px solid;
+  border-top-color: var(--grey-color);
+}

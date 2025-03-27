@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+:root {
+  --main-color: #9cc54b;
+  --main-color-light: #a9d453;
+  --grey-color: #bfbfbf;
+  font-family: "Montserrat", sans-serif;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*  ----------  HEADER  --------------------- */
+
+header {
+  margin: 0 50px 0px;
+  text-align: center;
+}
+
+header h1 {
+  padding: 30px 20px 20px;
+  font-size: 3em;
+  color: var(--main-color);
+}
+
+/*  ----------  ORDERS  --------------------- */
+
+.order-list {
+  width: 50%;
+
+  margin: auto;
+  margin-top: 2em;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order {
+  width: 100%;
+
+  padding-left: 20px;
+  padding-top: 10px;
+
+  display: flex;
+  flex-direction: row;
+
+  border-top: 1px solid;
+  border-top-color: var(--grey-color);
+}
+
+.order-quantity {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.order-button {
+  height: 1.5em;
+  line-height: 1.5em;
+  width: 1.5em;
+  font-size: 1.5em;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+.order-button .disable {
+  background-color: var(--grey-color);
+}
+
+.order-button:hover {
+  background: var(--main-color-light);
+}
+
+/*  ----------  CHECKOUT BUTTON  --------------------- */
+
+.checkout-button {
+  width: 55%;
+
+  margin: auto;
+  margin-top: 30px;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+
+  outline: none;
+  border: none;
+  border-radius: 15px;
+  background: var(--main-color);
+}
+
+.right {
+  margin-left: auto;
+}
+
+.checkout-button:hover {
+  background: var(--main-color-light);
+}
