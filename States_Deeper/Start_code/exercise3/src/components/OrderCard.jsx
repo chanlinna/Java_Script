@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
 
-export default function OrderCard({ product, price, iniQuantity, updateQuantity }) {
-  const [orderQuantity, setQuantity] = useState(iniQuantity);
+export default function OrderCard({ product, price, quantity, updateQuantity }) {
+  const [orderQuantity, setQuantity] = useState(quantity);
  
   function handleIncrement(){
     const newQuantity = orderQuantity + 1;
